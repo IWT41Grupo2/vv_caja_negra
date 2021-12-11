@@ -23,6 +23,11 @@ public class RemoveTest {
     public class removeLastClass{
 
         @Test
+        public void removeLastNone() throws EmptyCollectionException {
+            assertThrows(NoSuchElementException.class, () -> {lista.removeLast("W");});
+        }
+
+        @Test
         public void removeLastSingle() throws EmptyCollectionException {
             assertEquals("Y", lista.removeLast("Y"));
         }
@@ -33,6 +38,7 @@ public class RemoveTest {
             Object expected = new String ("C");
             assertEquals(expected.toString(), listaRepetidos.removeLast("C").toString());
         }
+
 
         @Test
         public void removeLastTest() throws EmptyCollectionException {

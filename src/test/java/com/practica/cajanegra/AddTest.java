@@ -64,6 +64,13 @@ public class AddTest {
             lista.addAtPos(s, 7);
             assertEquals("[A, B, C, M, Y, Z, " + s +"]", lista.toString());
         }
+
+        @ParameterizedTest()
+        @ValueSource(strings= {"@", "A", "B", "M", "Y", "Z", "["})
+        public void addAtPosTestAfterLast(String s){
+            lista.addAtPos(s, 8);
+            assertEquals("[A, B, C, M, Y, Z, " + s +"]", lista.toString());
+        }
     }
 
     @Nested
